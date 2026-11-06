@@ -6,6 +6,8 @@ updates:
     open-pull-requests-limit: 10
     rebase-strategy: auto
     labels: [dependencies, github-actions]
+    cooldown:
+      default-days: 7
 
   - package-ecosystem: "docker"
     directory: "/ann/src/main/python/dataflow/worker_harness/Dockerfile"
@@ -16,3 +18,5 @@ updates:
     ignore: &ignore_major_minor_updates
       - dependency-name: "*"
         update-types: ["version-update:semver-major", "version-update:semver-minor"]
+    cooldown:
+      default-days: 7
